@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="avaliacoes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dd464cfc-4ab3-4166-bebb-494c4202dce4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="avaliacao.solicitacao.cliente.nome" class="java.lang.String"/>
+	<field name="avaliacao.nota" class="java.lang.String"/>
+	<field name="avaliacao.comentario" class="java.lang.String"/>
+	<field name="avaliacao.solicitacaoServico.servico.nome" class="java.lang.String"/>
+	<field name="avaliacao.solicitacao.servico.autonomo.nomeFantasia" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="acda62c2-be21-434d-a94b-89d918a44f13" x="0" y="11" width="555" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="19"/>
+				</textElement>
+				<text><![CDATA[Resumo: Avaliações do Serviço ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a7052256-f2a6-49f9-af85-29bc7afcdbb9" x="150" y="41" width="255" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao.solicitacaoServico.servico.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5419dc5d-13de-47b7-a007-4f803c860db2" x="226" y="59" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao.solicitacao.servico.autonomo.nomeFantasia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="65" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="05127f45-509c-41cc-8316-cc75fcef2a28" x="109" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao.solicitacao.cliente.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f37db500-4e96-4f4e-9a61-aed77acac2ed" x="10" y="0" width="68" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao.nota}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3404d394-6b68-4f7a-894c-ede832672530" x="82" y="0" width="27" height="20"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Por]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e53bb8bb-e3df-4019-a104-69bd2ff13f1b" x="10" y="32" width="542" height="79"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao.comentario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7f6fbdfb-4569-4460-8886-33903df0bc6f" x="432" y="34" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="54d57a9a-be76-4a2a-b552-6b1a8cffda57" x="512" y="34" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

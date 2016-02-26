@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="agenda" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78380b56-340c-44d3-92d4-bd82ba5efa87">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="solicitacaoServico.servico.descricao" class="java.lang.String"/>
+	<field name="dataAgendamento" class="java.util.Date"/>
+	<field name="solicitacaoServico.cliente.nome" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0cb0e8b3-1f66-4649-9e0c-abbd8d9865f0" x="0" y="15" width="572" height="49"/>
+				<textElement textAlignment="Center">
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Agenda]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d8008194-579a-48b6-8d7a-0d570853ca81" stretchType="RelativeToBandHeight" x="133" y="2" width="196" height="20"/>
+				<textElement/>
+				<text><![CDATA[Serviço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90d6f81f-54b8-4ff8-a7a7-3e62ada78a0e" stretchType="RelativeToBandHeight" x="33" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37f0c324-cb06-49ca-b450-cb0d497a53c5" stretchType="RelativeToBandHeight" x="329" y="2" width="216" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement uuid="cfc8b3c7-95ca-46ad-a34f-84d05549afaa" x="133" y="2" width="196" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{solicitacaoServico.servico.descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="38a6af41-2d3e-4520-ae04-d8088d71a1f3" x="33" y="2" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{dataAgendamento})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="644ac185-2655-475e-bb8e-3c8e88778f71" x="329" y="2" width="216" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{solicitacaoServico.cliente.nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
